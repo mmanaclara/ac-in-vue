@@ -23,7 +23,7 @@ module.exports = {
           marginInline: 'auto',
           paddingInline: '1.5rem',
           maxWidth: '75rem',
-          height: '100vh',
+          height: 'calc(100vh - 4rem)',
           fontFamily: theme('fontFamily.sans'),
           overflow: 'hidden'
         },
