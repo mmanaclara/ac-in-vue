@@ -3,7 +3,7 @@
 <template>
   <main class="page-container grid grid-cols-2 items-center gap-4">
     <div class="flex flex-col justify-center gap-6">
-      <h1 class="text-title-1">Let's create unforgettable memories together</h1>
+      <h1 class="text-title-1 text-zinc-700">Let's create unforgettable memories together</h1>
       <p class="text-zinc-600">
         Explore the world, discover new cultures <br />
         and expand your horizons.
