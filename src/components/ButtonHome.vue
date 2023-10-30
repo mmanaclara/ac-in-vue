@@ -1,6 +1,10 @@
 <template>
-  <button class="btn-primary hover:opacity-90">Find out more</button>
+  <RouterLink :to="{ name: 'personal-info' }" class="btn-primary hover:opacity-90"
+    >Find out more</RouterLink
+  >
 </template>
+
+<script setup></script>
 
 <style scoped>
 .btn-primary {

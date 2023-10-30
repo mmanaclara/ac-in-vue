@@ -14,15 +14,20 @@
       >
         <div class="flex flex-col w-full max-w-[20rem]">
           <label for="name" class="text-zinc-600 font-medium">Name</label>
-          <div class="input-box border-zinc-200">
+          <div class="input-box border-zinc-200 relative">
             <input
               type="text"
               id="name"
-              required
               class="border-none outline-none placeholder:text-zinc-500 w-full"
               placeholder="Name"
-              v-model="name"
+              v-model="form.name"
             />
+            <p
+              v-if="!isNameValid"
+              class="text-red-700 absolute left-0 -bottom-[1.5rem] text-sm font-medium"
+            >
+              *Name is required.
+            </p>
           </div>
         </div>
         <div class="flex flex-col w-full max-w-[20rem]">
@@ -31,10 +36,9 @@
             <input
               type="email"
               id="email"
-              required
               class="border-none outline-none placeholder:text-zinc-500 w-full"
               placeholder="Email"
-              v-model="email"
+              v-model="form.email"
             />
           </div>
         </div>
@@ -44,10 +48,9 @@
             <input
               type="phone"
               id="phone"
-              required
               class="border-none outline-none placeholder:text-zinc-500 w-full"
               placeholder="Phone"
-              v-model="phone"
+              v-model="form.phone"
             />
           </div>
         </div>
@@ -57,10 +60,9 @@
             <input
               type="city"
               id="city"
-              required
               class="border-none outline-none placeholder:text-zinc-500 w-full"
               placeholder="City/State"
-              v-model="city"
+              v-model="form.city"
             />
           </div>
         </div>
@@ -79,15 +81,25 @@
 </template>
 
 <script setup>
-import { ref } from 'vue'
+import { ref, computed } from 'vue'
 import ButtonPersonalInfo from '@/components/ButtonPersonalInfo.vue'
 
-const name = ref('')
-const email = ref('')
-const phone = ref('')
-const city = ref('')
+const form = ref({
+  name: null,
+  email: null,
+  phone: null,
+  city: null
+})
+
+const isFormValid = computed(() => isNameValid.value && isCityValid.value)
+const isNameValid = computed(() => !!form.value.name)
+const isCityValid = computed(() => !!form.value.city)
 
 const handleSubmitForm = () => {
-  console.log('submitted')
+  if (isFormValid.value) {
+    console.log('submitted')
+  } else {
+    console.log('invalid fields')
+  }
 }
 </script>

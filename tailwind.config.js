@@ -56,7 +56,8 @@ module.exports = {
           height: '2.5rem',
           color: '#52525b',
           display: 'flex',
-          alignItems: 'center'
+          alignItems: 'center',
+          fontSize: '0.875rem'
         }
       })
     })
