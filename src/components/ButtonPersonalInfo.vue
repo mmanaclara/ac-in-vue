@@ -19,5 +19,6 @@
   font-size: 1.125rem;
   color: rgb(54, 54, 54);
   transition: all 0.3s;
+  margin-top: 0.75rem;
 }
 </style>

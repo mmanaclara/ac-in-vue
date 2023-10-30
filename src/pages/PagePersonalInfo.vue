@@ -7,6 +7,15 @@
         <img src="/icons/icon_heart.svg" alt="" />
         Tell us a bit more about yourself
       </h2>
+      <!-- // show all the errors
+        <p 
+          v-for="error in v$.$errors"
+          :key="error.$uid"
+          class="text-red-700 left-0 -bottom-[1.5rem] text-sm font-medium"
+        >
+        {{ error.$property }} - {{ error.$message }}.
+        </p> 
+      -->
       <form
         class="flex flex-col gap-6 w-full px-6 items-center justify-center"
         ref="formRef"
@@ -14,56 +23,83 @@
       >
         <div class="flex flex-col w-full max-w-[20rem]">
           <label for="name" class="text-zinc-600 font-medium">Name</label>
-          <div class="input-box border-zinc-200 relative">
+          <div class="input-box relative">
             <input
               type="text"
               id="name"
               class="border-none outline-none placeholder:text-zinc-500 w-full"
               placeholder="Name"
-              v-model="form.name"
+              v-model="formData.name"
             />
-            <p
-              v-if="!isNameValid"
+            <!-- <p
+              v-for="error in v$.name.$errors"
+              :key="error.$uid"
               class="text-red-700 absolute left-0 -bottom-[1.5rem] text-sm font-medium"
             >
-              *Name is required.
+              {{ error.$message }}.
+            </p> -->
+            <p
+              v-if="v$.name.$errors.length"
+              class="text-red-700 absolute left-0 -bottom-[1.5rem] text-sm font-medium"
+            >
+              Name is required.
             </p>
           </div>
         </div>
         <div class="flex flex-col w-full max-w-[20rem]">
-          <label for="name" class="text-zinc-600 font-medium">Email</label>
-          <div class="input-box">
+          <label for="email" class="text-zinc-600 font-medium">Email</label>
+          <div class="input-box relative">
             <input
-              type="email"
+              type="text"
               id="email"
               class="border-none outline-none placeholder:text-zinc-500 w-full"
               placeholder="Email"
-              v-model="form.email"
+              v-model="formData.email"
             />
+            <p
+              v-if="v$.email.$errors.length"
+              class="text-red-700 absolute left-0 -bottom-[1.5rem] text-sm font-medium"
+            >
+              This is not a valid email address.
+            </p>
           </div>
         </div>
         <div class="flex flex-col w-full max-w-[20rem]">
-          <label for="name" class="text-zinc-600 font-medium">Phone</label>
-          <div class="input-box">
+          <label for="phone" class="text-zinc-600 font-medium">Phone</label>
+          <div class="input-box relative">
             <input
               type="phone"
               id="phone"
               class="border-none outline-none placeholder:text-zinc-500 w-full"
               placeholder="Phone"
-              v-model="form.phone"
+              v-model="formData.phone"
             />
+            <p
+              v-for="error in v$.phone.$errors"
+              :key="error.$uid"
+              class="text-red-700 absolute left-0 -bottom-[1.5rem] text-sm font-medium"
+            >
+              {{ error.$message }}.
+            </p>
           </div>
         </div>
         <div class="flex flex-col w-full max-w-[20rem]">
-          <label for="name" class="text-zinc-600 font-medium">City/State</label>
-          <div class="input-box">
+          <label for="city" class="text-zinc-600 font-medium">City/State</label>
+          <div class="input-box relative">
             <input
               type="city"
               id="city"
               class="border-none outline-none placeholder:text-zinc-500 w-full"
               placeholder="City/State"
-              v-model="form.city"
+              v-model="formData.city"
             />
+            <p
+              v-for="error in v$.city.$errors"
+              :key="error.$uid"
+              class="text-red-700 absolute left-0 -bottom-[1.5rem] text-sm font-medium"
+            >
+              {{ error.$message }}.
+            </p>
           </div>
         </div>
 
@@ -81,25 +117,37 @@
 </template>
 
 <script setup>
-import { ref, computed } from 'vue'
+import { reactive, computed } from 'vue'
 import ButtonPersonalInfo from '@/components/ButtonPersonalInfo.vue'
 
-const form = ref({
-  name: null,
-  email: null,
-  phone: null,
-  city: null
+import { useVuelidate } from '@vuelidate/core'
+import { email, minLength, required } from '@vuelidate/validators'
+
+const formData = reactive({
+  name: '',
+  email: '',
+  phone: '',
+  city: ''
 })
 
-const isFormValid = computed(() => isNameValid.value && isCityValid.value)
-const isNameValid = computed(() => !!form.value.name)
-const isCityValid = computed(() => !!form.value.city)
+const rules = computed(() => {
+  return {
+    name: { required },
+    email: { required, email },
+    phone: { required, minLength: minLength(10) },
+    city: { required }
+  }
+})
 
-const handleSubmitForm = () => {
-  if (isFormValid.value) {
+const v$ = useVuelidate(rules, formData)
+
+const handleSubmitForm = async () => {
+  const result = await v$.value.$validate()
+
+  if (result) {
     console.log('submitted')
   } else {
-    console.log('invalid fields')
+    console.log("oops, it didn't work :(")
   }
 }
 </script>
