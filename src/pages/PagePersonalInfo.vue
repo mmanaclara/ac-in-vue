@@ -106,7 +106,7 @@
     <div>
       <img
         src="/images/three-women-walking-in-a-cold-day.png"
-        class="object-fit hidden absolute lg:-top-[30%] lg:overflow-hidden lg:right-0 lg:w-1/2 lg:block"
+        class="object-cover img-container h-screen hidden absolute lg:overflow-hidden lg:right-0 lg:w-1/2 lg:block"
         alt=""
       />
     </div>
@@ -155,11 +155,20 @@ const handleSubmitForm = async () => {
 </script>
 
 <style scoped>
+body {
+  overflow: hidden;
+}
 .input-box:focus-within {
   outline: 2px solid rgb(255, 198, 50);
 }
 
 .input-box:focus-within svg {
   color: rgb(255, 198, 50);
+}
+
+.img-container {
+  top: 50%;
+  left: 50%;
+  transform: translate(0%, -50%);
 }
 </style>
