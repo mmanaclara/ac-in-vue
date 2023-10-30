@@ -48,7 +48,7 @@ module.exports = {
           fontFamily: theme('fontFamily.sans')
         },
         '.input-box': {
-          paddingInline: '1rem',
+          paddingInline: '.5rem',
           borderRadius: '4px',
           maxWidth: '20rem',
           width: '100%',
@@ -57,6 +57,7 @@ module.exports = {
           color: '#52525b',
           display: 'flex',
           alignItems: 'center',
+          gap: '.25rem',
           fontSize: '0.875rem'
         }
       })

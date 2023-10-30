@@ -24,6 +24,7 @@
         <div class="flex flex-col w-full max-w-[20rem]">
           <label for="name" class="text-zinc-600 font-medium">Name</label>
           <div class="input-box relative">
+            <IconName />
             <input
               type="text"
               id="name"
@@ -31,13 +32,6 @@
               placeholder="Name"
               v-model="formData.name"
             />
-            <!-- <p
-              v-for="error in v$.name.$errors"
-              :key="error.$uid"
-              class="text-red-700 absolute left-0 -bottom-[1.5rem] text-sm font-medium"
-            >
-              {{ error.$message }}.
-            </p> -->
             <p
               v-if="v$.name.$errors.length"
               class="text-red-700 absolute left-0 -bottom-[1.5rem] text-sm font-medium"
@@ -49,6 +43,7 @@
         <div class="flex flex-col w-full max-w-[20rem]">
           <label for="email" class="text-zinc-600 font-medium">Email</label>
           <div class="input-box relative">
+            <IconEmail />
             <input
               type="text"
               id="email"
@@ -67,6 +62,7 @@
         <div class="flex flex-col w-full max-w-[20rem]">
           <label for="phone" class="text-zinc-600 font-medium">Phone</label>
           <div class="input-box relative">
+            <IconPhone />
             <input
               type="phone"
               id="phone"
@@ -79,13 +75,14 @@
               :key="error.$uid"
               class="text-red-700 absolute left-0 -bottom-[1.5rem] text-sm font-medium"
             >
-              {{ error.$message }}.
+              Phone is required.
             </p>
           </div>
         </div>
         <div class="flex flex-col w-full max-w-[20rem]">
           <label for="city" class="text-zinc-600 font-medium">City/State</label>
           <div class="input-box relative">
+            <IconCity />
             <input
               type="city"
               id="city"
@@ -98,7 +95,7 @@
               :key="error.$uid"
               class="text-red-700 absolute left-0 -bottom-[1.5rem] text-sm font-medium"
             >
-              {{ error.$message }}.
+              City/State are required.
             </p>
           </div>
         </div>
@@ -119,6 +116,11 @@
 <script setup>
 import { reactive, computed } from 'vue'
 import ButtonPersonalInfo from '@/components/ButtonPersonalInfo.vue'
+
+import IconName from '@/components/IconName.vue'
+import IconEmail from '@/components/IconEmail.vue'
+import IconPhone from '@/components/IconPhone.vue'
+import IconCity from '@/components/IconCity.vue'
 
 import { useVuelidate } from '@vuelidate/core'
 import { email, minLength, required } from '@vuelidate/validators'
@@ -151,3 +153,13 @@ const handleSubmitForm = async () => {
   }
 }
 </script>
+
+<style scoped>
+.input-box:focus-within {
+  outline: 2px solid rgb(255, 198, 50);
+}
+
+.input-box:focus-within svg {
+  color: rgb(255, 198, 50);
+}
+</style>
