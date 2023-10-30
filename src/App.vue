@@ -5,14 +5,7 @@ import TheHeader from './components/TheHeader.vue'
 
 <template>
   <TheHeader />
-  <div class="container">
-    <RouterView />
-  </div>
+  <RouterView />
 </template>
 
-<style scoped>
-.container {
-  background: url('/images/bg-pattern.png');
-  margin-inline: auto;
-}
-</style>
+<style scoped></style>

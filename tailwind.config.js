@@ -34,29 +34,29 @@ module.exports = {
           letterSpacing: '-0.1rem',
           fontFamily: theme('fontFamily.sans')
         },
+        '.text-title-2': {
+          fontSize: '1.5rem',
+          fontWeight: '600',
+          letterSpacing: '-0.05rem',
+          fontFamily: theme('fontFamily.sans')
+        },
         '.text-paragraph-1': {
           fontSize: '1.125rem',
           fontWeight: 400,
           lineHeight: '110%',
-          color: theme('colors.zinc.500'),
+          color: theme('colors.zinc.600'),
           fontFamily: theme('fontFamily.sans')
         },
-        '.btn-primary': {
-          background: 'rgb(255, 198, 50)',
-          width: '25rem',
+        '.input-box': {
+          paddingInline: '1rem',
           borderRadius: '4px',
-          paddingBlock: '0.75rem',
-          marginTop: '1,5rem',
-          boxShadow: 'rgba(0, 0, 0, 0.15) 4px 4px 4px',
-          display: 'grid',
-          placeItems: 'center',
-          justifyContent: 'center',
-          alignItems: 'center',
-          textTransform: 'uppercase',
-          fontWeight: 600,
-          fontSize: '1.125rem',
-          color: 'rgb(54, 54, 54)',
-          transition: 'all 0.3s'
+          maxWidth: '20rem',
+          width: '100%',
+          border: '1px solid #52525b',
+          height: '2.5rem',
+          color: '#52525b',
+          display: 'flex',
+          alignItems: 'center'
         }
       })
     })

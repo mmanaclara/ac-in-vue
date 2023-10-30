@@ -1,5 +1,3 @@
-<script setup></script>
-
 <template>
   <main class="page-container grid grid-cols-2 items-center gap-4">
     <div class="flex flex-col justify-center gap-6">
@@ -9,7 +7,7 @@
         and expand your horizons.
       </p>
 
-      <button class="btn-primary hover:opacity-90">Find out more</button>
+      <ButtonHome />
     </div>
     <div class="w-[30rem] items-end ml-auto">
       <img
@@ -20,3 +18,7 @@
     </div>
   </main>
 </template>
+
+<script setup>
+import ButtonHome from '../components/ButtonHome.vue'
+</script>
