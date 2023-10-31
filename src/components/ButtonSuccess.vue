@@ -1,11 +1,13 @@
 <template>
-  <button type="submit" class="btn-primary hover:opacity-90">Send</button>
+  <RouterLink to="/" class="btn-primary hover:opacity-90">Back to homepage</RouterLink>
 </template>
+
+<script setup></script>
 
 <style scoped>
 .btn-primary {
   background: rgb(255, 198, 50);
-  width: 20rem;
+  width: 25rem;
   border-radius: 4px;
   padding-block: 0.75rem;
   margin-top: 1, 5rem;
@@ -19,6 +21,5 @@
   font-size: 1.125rem;
   color: rgb(54, 54, 54);
   transition: all 0.3s;
-  margin-top: 0.75rem;
 }
 </style>

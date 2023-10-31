@@ -95,11 +95,14 @@ import { useCountriesStore } from '@/stores/countries.js'
 import { storeToRefs } from 'pinia'
 import { useVuelidate } from '@vuelidate/core'
 import { required } from '@vuelidate/validators'
+import { useRouter } from 'vue-router'
 
 import ButtonDestination from '@/components/ButtonDestination.vue'
 import IconLanguage from '@/components/IconLanguage.vue'
 import IconCountry from '@/components/IconCountry.vue'
 import IconInputCity from '@/components/IconInputCity.vue'
+
+const router = useRouter()
 
 const { getCountries } = useCountriesStore()
 const { countries } = storeToRefs(useCountriesStore())
@@ -167,7 +170,7 @@ const handleSubmitForm = async () => {
   const result = await v$.value.$validate()
 
   if (result) {
-    console.log('submitted')
+    router.push({ name: 'success' })
   } else {
     console.log("oops, it didn't work :(")
   }

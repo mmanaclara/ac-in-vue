@@ -18,6 +18,11 @@ const router = createRouter({
       path: '/destination',
       name: 'destination',
       component: () => import('@/pages/PageDestination.vue')
+    },
+    {
+      path: '/success',
+      name: 'success',
+      component: () => import('@/pages/PageSuccess.vue')
     }
   ]
 })
