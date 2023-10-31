@@ -51,7 +51,7 @@
               v-if="v$.country.$errors.length"
               class="text-red-700 absolute left-0 -bottom-[1.5rem] text-sm font-medium"
             >
-              This is not a valid country address.
+              Country is required.
             </p>
           </div>
         </div>
