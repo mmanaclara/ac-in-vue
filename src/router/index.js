@@ -13,6 +13,11 @@ const router = createRouter({
       path: '/personal-info',
       name: 'personal-info',
       component: () => import('@/pages/PagePersonalInfo.vue')
+    },
+    {
+      path: '/destination',
+      name: 'destination',
+      component: () => import('@/pages/PageDestination.vue')
     }
   ]
 })

@@ -115,6 +115,7 @@
 
 <script setup>
 import { reactive, computed } from 'vue'
+import { useRouter } from 'vue-router'
 import ButtonPersonalInfo from '@/components/ButtonPersonalInfo.vue'
 
 import IconName from '@/components/IconName.vue'
@@ -124,6 +125,8 @@ import IconCity from '@/components/IconCity.vue'
 
 import { useVuelidate } from '@vuelidate/core'
 import { email, minLength, required } from '@vuelidate/validators'
+
+const router = useRouter()
 
 const formData = reactive({
   name: '',
@@ -147,9 +150,7 @@ const handleSubmitForm = async () => {
   const result = await v$.value.$validate()
 
   if (result) {
-    console.log('submitted')
-  } else {
-    console.log("oops, it didn't work :(")
+    router.push({ name: 'destination' })
   }
 }
 </script>

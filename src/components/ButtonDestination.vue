@@ -1,6 +1,10 @@
 <template>
-  <button type="submit" class="btn-primary hover:opacity-90">Send</button>
+  <RouterLink to="/" class="btn-primary hover:opacity-90">Finish</RouterLink>
 </template>
+
+<script setup>
+import { RouterLink } from 'vue-router'
+</script>
 
 <style scoped>
 .btn-primary {
