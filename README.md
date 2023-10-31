@@ -1,35 +1,68 @@
-# ac-in
+<h1 align="center">
+  🌍 ac.in | Exchange agency
+</h1>
 
-This template should help get you started developing with Vue 3 in Vite.
+<br>
 
-## Recommended IDE Setup
+<p align="center">
+  <img alt="Website view" src="./cover.png" width="100%">
+</p>
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
+## 💻 Project
 
-## Customize configuration
+ACin - exchange agency is a new project built with Vue 3. Easily input your personal details and customize your exchange preferences, including language, country, and city for a great experience.
 
-See [Vite Configuration Reference](https://vitejs.dev/config/).
+## ✨ Technologies
+
+This project was developed using the following technologies:
+
+- [Vite](https://vitejs.dev/)
+- [Vue.js](https://vuejs.org/)
+- [Vue Router](https://router.vuejs.org/)
+- [Tailwind](https://tailwindcss.com/)
+- [ES Lint](https://eslint.org/)
+- [Axios](https://axios-http.com/docs/intro)
+- [Vuelidate](https://vuelidate.js.org/)
+- [Pinia](https://pinia.vuejs.org/)
+- [CountriesNow](https://countriesnow.space/)
+
+## 🛠 Features
+
+✔ Input personal information using the user-friendly form<br/>
+✔ Validate form fields to ensure accurate submission<br/>
+✔ Request data from CountriesNow API<br/>
+✔ Our app displays data for your selected country and its cities with just a few clicks.<br/>
+✔ Smooth navigation: transition between different routes <br/>
+
+## 🔜 Next steps
+
+✔ Create Not Found Page<br/>
+✔ Add animations<br/>
+✔ Send email<br/>
+
+## 📖 Knowledge
+
+With this project, I improved my skills in:
+
+- `Vue Router` to configure route settings;
+- `Tailwind` to apply styles and create the layout;
+- `ESLint` to define code writing standards;
+- `Vuelidate` to validate forms;
+- `Pinia` to manage states;
 
 ## Project Setup
 
-```sh
-npm install
-```
+### 💾 Clone the project
 
-### Compile and Hot-Reload for Development
+Clone the repository to create a local copy on your computer:<br/>
+`$ git clone https://github.com/mmanaclara/ac-in-vue.git`
 
-```sh
-npm run dev
-```
+### 🧰 Install dependencies
 
-### Compile and Minify for Production
+`$ npm install`
 
-```sh
-npm run build
-```
+### 🚀 Compile and hot-reload for development
 
-### Lint with [ESLint](https://eslint.org/)
-
-```sh
-npm run lint
-```
+`$ npm run dev`
+<br />
+You can now access [`localhost:5173`](http://localhost:5173/) from your browser.
