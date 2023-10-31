@@ -10,7 +10,7 @@
 
 ## 💻 Project
 
-ACin - exchange agency is a new project built with Vue 3. Easily input your personal details and customize your exchange preferences, including language, country, and city for a great experience.
+ACin - exchange agency's a new project built with Vue 3. Easily input your personal details and customize your exchange preferences, including language, country, and city for a great experience.
 
 ## ✨ Technologies
 
