@@ -53,12 +53,21 @@
               placeholder="Email"
               v-model="formData.email"
             />
-            <p
-              v-if="v$.email.$errors.length"
-              class="text-red-700 absolute left-0 -bottom-[1.5rem] text-sm font-medium"
-            >
-              This is not a valid email address.
-            </p>
+            <template v-if="v$.email.$errors.length">
+              <div v-for="item in v$.email.$errors" :key="item">
+                <template v-if="item.$message === 'Value is not a valid email address'">
+                  <p class="text-red-700 absolute left-0 -bottom-[1.5rem] text-sm font-medium">
+                    This is not a valid email address.
+                  </p>
+                </template>
+                <template v-else>
+                  <p class="text-red-700 absolute left-0 -bottom-[1.5rem] text-sm font-medium">
+                    Email is required.
+                  </p>
+                </template>
+              </div>
+            </template>
+            <!-- <p v-else-if="v$.email.$errors.length > 0">This is not a valid email address.</p> -->
           </div>
         </div>
         <div class="flex flex-col w-full max-w-[20rem]">
