@@ -1,7 +1,7 @@
 <template>
   <section class="page-container flex justify-center lg:grid lg:grid-cols-2 items-center lg:gap-8">
     <div class="flex flex-col gap-6 items-center w-full">
-      <h2 class="text-title-2 text-zinc-600 flex gap-2">
+      <h2 class="text-title-2 text-zinc-600 flex gap-2" data-aos="fade-left" data-aos-delay="200">
         <img src="/icons/icon_airplane.svg" alt="" />
         Take-off into fun!
       </h2>
@@ -10,6 +10,8 @@
         ref="formRef"
         id="destinationForm"
         @submit.prevent="handleSubmitForm"
+        data-aos="fade-left"
+        data-aos-delay="250"
       >
         <div class="flex flex-col w-full max-w-[20rem]">
           <label for="language" class="text-zinc-600 font-medium">Language</label>

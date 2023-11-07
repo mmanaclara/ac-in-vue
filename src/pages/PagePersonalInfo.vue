@@ -3,7 +3,7 @@
 <template>
   <section class="page-container flex justify-center lg:grid lg:grid-cols-2 items-center lg:gap-8">
     <div class="flex flex-col gap-6 items-center w-full">
-      <h2 class="text-title-2 text-zinc-600 flex gap-2">
+      <h2 class="text-title-2 text-zinc-600 flex gap-2" data-aos="fade-right" data-aos-delay="200">
         <img src="/icons/icon_heart.svg" alt="" />
         Tell us a bit more about yourself
       </h2>
@@ -20,6 +20,8 @@
         class="flex flex-col gap-6 w-full px-6 items-center justify-center"
         ref="formRef"
         @submit.prevent="handleSubmitForm"
+        data-aos="fade-right"
+        data-aos-delay="250"
       >
         <div class="flex flex-col w-full max-w-[20rem]">
           <label for="name" class="text-zinc-600 font-medium">Name</label>

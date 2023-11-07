@@ -1,6 +1,11 @@
 <template>
   <header class="h-16 grid place-items-center">
-    <RouterLink to="/" class="max-w-[75rem] w-full mx-auto px-6 flex gap-2">
+    <RouterLink
+      to="/"
+      class="max-w-[75rem] w-full mx-auto px-6 flex gap-2"
+      data-aos="fade-right"
+      data-aos-delay="150"
+    >
       <img src="/icons/icon_globe.svg" alt="" />
       <span class="font-bold text-zinc-600 text-lg">ac.in</span>
     </RouterLink>
