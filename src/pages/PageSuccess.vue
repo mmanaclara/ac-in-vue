@@ -1,15 +1,19 @@
 <template>
-  <main class="page-container grid grid-cols-2 items-center gap-4">
-    <div class="flex flex-col justify-center gap-6">
-      <h1 class="text-title-1 text-zinc-700">Now you're one step closer to your dream!</h1>
-      <p class="text-zinc-600">
+  <main
+    class="page-container flex flex-col-reverse !h-fit lg:grid lg:grid-cols-2 items-center gap-4"
+  >
+    <div class="flex flex-col justify-center lg:items-start items-center gap-6">
+      <h1 class="text-title-1 text-zinc-700 text-center lg:text-left">
+        Now you're one step closer to your dream!
+      </h1>
+      <p class="text-zinc-600 text-center lg:text-left">
         You will receive an email to start planning EVERY-THING! <br />
         Deal? 🤩
       </p>
 
       <ButtonSuccess />
     </div>
-    <div class="w-[26rem] items-end ml-auto self-start">
+    <div class="w-[80vw] lg:w-[26rem] items-end ml-auto self-start">
       <img src="/images/happy-woman.png" alt="" class="w-full object-cover" />
     </div>
   </main>

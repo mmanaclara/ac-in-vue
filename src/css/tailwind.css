@@ -2,11 +2,23 @@
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
 
-#app {
-  background: #f4f4f5;
-  background: url('/images/bg-pattern.png') no-repeat;
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: left;
-  margin-inline: auto;
+@layer base {
+  #app {
+    background: #f4f4f5;
+    background: url('/images/bg-pattern.png') no-repeat;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: left;
+    margin-inline: auto;
+  }
+
+  :root {
+    font-size: 80%;
+  }
+
+  @media (min-width: 640px) {
+    :root {
+      font-size: 100%;
+    }
+  }
 }
