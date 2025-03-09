@@ -1,6 +1,6 @@
 <template>
   <main
-    class="page-container flex flex-col-reverse !h-fit lg:grid lg:grid-cols-2 items-center gap-4"
+    class="page-container flex-1 flex flex-col-reverse !h-fit lg:grid lg:grid-cols-2 items-center gap-4"
   >
     <div class="flex flex-col justify-center lg:items-start items-center gap-6">
       <h1
