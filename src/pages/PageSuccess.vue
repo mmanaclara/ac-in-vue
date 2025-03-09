@@ -1,6 +1,6 @@
 <template>
   <main
-    class="page-container flex flex-col-reverse !h-fit lg:grid lg:grid-cols-2 items-center gap-4"
+    class="page-container flex-1 flex flex-col-reverse !h-fit lg:grid lg:grid-cols-2 items-center gap-4"
   >
     <div class="flex flex-col justify-center lg:items-start items-center gap-6">
       <h1
@@ -20,7 +20,7 @@
       </div>
     </div>
     <div
-      class="w-[80vw] lg:w-[26rem] items-end ml-auto self-start"
+      class="w-[80vw] lg:w-[26rem] items-end mx-auto self-center"
       data-aos="fade-left"
       data-aos-delay="200"
     >
